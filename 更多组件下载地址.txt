@@ -1,0 +1,3 @@
+适用浏览器：FireFox、Chrome、Safari、Opera、傲游、搜狗. 不支持IE8、360、世界之窗。
+QUI框架包含近百种组件，几十套美观的皮肤样式和详细的示例。
+官方网站：http://www.quickui.net

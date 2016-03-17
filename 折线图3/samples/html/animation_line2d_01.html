@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>ichartjs 示例</title>
+		<meta name="Description" content="The ichartjs's gallery center,ichartjs 示例中心" />
+		<meta name="Keywords" content="ichartjs demo,Html5 demo,ichartjs示例,ichartjs示例,Html5示例,Html5示例" />
+		<script type="text/javascript" src="../../ichart.1.2.min.js"></script>
+		<link rel="stylesheet" href="../css/demo.css" type="text/css"/>
+		<script type="text/javascript">
+		$(function(){
+			
+			var data = [
+			         	{
+			         		name : 'PV',
+			         		value:[5,10,50,20,60,70,10],
+			         		color:'#67b1d7',
+			         		line_width:1
+			         	}
+			         ];
+	        
+			var labels = ["一月","三月","五月","七月","九月","十一月","十二月"];
+			
+			var chart = new iChart.Area2D({
+				render : 'canvasDiv',
+				border:0,
+				data: data,
+				align:'center',
+				footnote : {
+					text:'d',
+					font : '微软雅黑',
+					fontsize:11,
+					fontweight:600,
+					padding:'10 5',
+					color:'#ffffff'
+				},
+				width : 320,
+				height : 200,
+				animation : true,//开启过渡动画
+				animation_duration:600,//600ms完成动画
+				tip:{
+					enable:true,
+					shadow:true,
+					listeners:{
+						 //tip:提示框对象、name:数据名称、value:数据值、text:当前文本、i:数据点的索引
+						parseText:function(tip,name,value,text,i){
+							 return "<span style='color:#11415a;font-size:10px;'>"+labels[i]+"<br/>"+
+								"</span><span style='color:#11415a;font-size:10px;'>"+value+"</span>";
+						}
+					}
+				},
+				crosshair:{
+					enable:true,
+					line_color:'#ec4646'
+				},
+				sub_option : {
+					smooth : false,
+					label:false,
+					hollow:true,
+					hollow_color:'#11415a',
+					hollow_inside:false,
+					point_size:6
+				},
+				coordinate:{
+					width:250,
+					height:180,
+					striped_factor : 0.18,
+					grid_color:'#67b1d7',
+					axis:{
+						color:'#2c95cb',
+						width:[0,0,2,2]
+					},
+					scale:[{
+						 position:'left',	
+						 start_scale:0,
+						 end_scale:100,
+						 scale_space:20,
+						 scale_size:1,
+						 scale_enable : false,
+						 label : {color:'#11415a',fontsize:11,fontweight:500},
+						 scale_color:'#11415a'
+					},{
+						 position:'bottom',	
+						 label : {color:'#11415a',fontsize:11,fontweight:500},
+						 scale_enable : false,
+						 labels:labels
+					}]
+				}
+			});
+
+		//开始画图
+		chart.draw();
+	});
+	</script>
+</head>
+<body>
+	<div id='canvasDiv'></div>
+	<div class='ichartjs_info'>
+		<span class='ichartjs_author'>writen by <a title="示例的贡献者" href="mailto:taylor@ichartjs.com">taylor</a></span>
+		<span class='ichartjs_btn' onmouseover="this.style.color='#2f99ff'" onmouseout="this.style.color='#0b2946'" onclick="window.top.viewCode(document);">View Code</span>
+		<div class='ichartjs_sm'>说明</div>
+		<div class='ichartjs_details'>
+			示例展示了网站上一日的流量统计。每隔1个小时统计一次。此示例用了平滑曲线代替直线。此示例的风格设计来源于互联网的一组图片。
+			这说明了ichartjs有较强的风格配置能力。
+		</div>
+		<span class='ichartjs_sm'>备注：</span>
+		<span class='ichartjs_details'>
+			数据均为模拟。风格来源于互联网。
+		</span>
+	</div>
+</body>
+</html>
+

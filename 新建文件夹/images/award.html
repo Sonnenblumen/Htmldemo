@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>卡得万利商业保理</title>
+    <!-- bootstrap-->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <!--framework7 css-->
+    <link rel="stylesheet" href="lib/framework7/css/framework7.css">
+    <!--main css-->
+    <link rel="stylesheet" href="css/wechat.css">
+</head>
+<body>
+<!-- Views-->
+<div class="views">
+    <!-- Your main view, should have "view-main" class-->
+    <div class="view view-main">
+
+        <div class="page-content padding0">
+            <div class="tabs height-full">
+                <div class="container-fluid padding0 align-middle back-ground-col">
+                    <div class="nav-body nav-body-bac">
+                        <div class="shovel"><img src="images/chanzi.png" id="idevent"></div>
+                        <div class="nav-buttom">
+                            <button type="button" class="btn btn-check-result btn-check-color btn-shadow" data-dismiss="modal">
+                                查看获奖记录
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="modal-body-top displaynone" id="myModal">
+                <div class="modal-dialog modal-dialog-align">
+                    <div class="modal-content modal-black-back">
+                        <div class="modal-body modal-body-back">
+                            <div class="modal-font">10000积分</div>
+                        </div>
+                        <div class="modal-footer modal-footer-pos">
+                            <button type="button" class="btn btn-check-result modal-footer-btn" data-dismiss="modal">
+                                立即兑换
+                            </button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
+            <div class="content-block" style="display: none;">
+                <!-- tabs控制面板 -->
+                <div class="buttons-row">
+                    <!-- 关联到第一个tab, 默认激活 -->
+                    <a href="#tab1" class="tab-link active button">Tab 1</a>
+                    <!-- 关联到第二个tab -->
+                    <a href="#tab2" class="tab-link button">Tab 2</a>
+                    <!-- 关联到第三个tab -->
+                    <a href="#tab3" class="tab-link button">Tab 3</a>
+                </div>
+            </div>
+            <!-- Tabs, 标签内容区容器 -->
+            <div class="tabs" style="display: none;">
+                <!-- Tab 1, 默认激活 -->
+                <div id="tab1" class="tab active">
+                    <div class="content-block">
+                        <p>This is tab 1 content</p>
+                        ...
+                    </div>
+                </div>
+                <!-- Tab 2 -->
+                <div id="tab2" class="tab">
+                    <div class="content-block">
+                        <p>This is tab 2 content</p>
+                        ...
+                    </div>
+                </div>
+                <!-- Tab 3 -->
+                <div id="tab3" class="tab">
+                    <div class="content-block">
+                        <p>This is tab 3 content</p>
+                        ...
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Path to Framework7 Library JS-->
+<script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+<!-- Path to your app js-->
+<script type="text/javascript" src="js/wechat.js"></script>
+
+<script type="text/javascript" src="lib/jquery.js"></script>
+<script>
+
+    $(function(){
+        var tiemer = "";
+        var time = 3000;//每次点击三秒后才能再次点击
+        var fun = function bClick(){
+            //alert("执行方法");
+            $('#idevent').addClass('idevent-rotate');
+            //在3秒内再按键无效
+            $("#idevent").unbind("click");
+            tiemer = setTimeout(function(){
+                $('.tabs').addClass('displaynone');
+                $('.view-main .padding0').css('background-color',"#404040");
+                $('.modal-body-top').fadeIn('slow');
+            },time);
+        };
+        $("#idevent").click(fun);
+    })
+
+
+</script>
+</body>
+</html>

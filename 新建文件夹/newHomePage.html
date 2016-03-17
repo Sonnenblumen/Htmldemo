@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>卡得万利商业保理</title>
+    <!-- bootstrap-->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <!--framework7 css-->
+    <link rel="stylesheet" href="lib/framework7/css/framework7.css">
+    <!--main css-->
+    <link rel="stylesheet" href="css/wechat.css">
+    <link rel="stylesheet" href="css/newHomepage.css">
+
+
+</head>
+<body>
+<!-- Views-->
+<div class="views">
+    <!-- Your main view, should have "view-main" class-->
+    <div class="view view-main login-background">
+        <!-- Top Navbar-->
+        <div class="navbar login-title">
+            <div class="navbar-inner new-navbar">
+                <div class="left new-homepage"><a href="#" class="close-img"><img src="images/left-pannnal.png" id="showLeft"> </a></div>
+                <div class="center sliding login-title-word">提升额度</div>
+                <div class="right">
+                    <a href="#" class="close-img new-close"><img src="images/messages.png"> </a>
+                </div>
+            </div>
+            <div class="float_l home-page-numbers">
+                <div class="icons home-page-button-content" id="icons">
+                    <span id="number1" class="btn home-numbers-button home-button-border">第1步</span>
+                    <span id="number2" class="btn home-numbers-button">第2步</span>
+                    <span id="number3" class="btn home-numbers-button">第3步</span>
+                    <span id="number4" class="btn home-numbers-button">第4步</span>
+                    <span id="number5" class="btn home-numbers-button">第5步</span>
+                    <ds class="home-font2 displaynone">切换步骤</ds>
+                </div>
+            </div>
+            <div class="float_l home-page-closes" id="closeStep">
+                <img class="rotate45" src="images/icon/close.png">
+            </div>
+            <div class="home-page-opacity"></div>
+            <div class="home-page-click-steps displaynone">
+                <span class="btn home-numbers-button-font1 button-font1-act">第1步</span>
+                <span class="btn home-numbers-button-font1">第2步</span>
+                <span class="btn home-numbers-button-font1">第3步</span>
+                <span class="btn home-numbers-button-font1">第4步</span>
+                <span class="btn home-numbers-button-font1">第5步</span>
+            </div>
+            <div class="home-back-black displaynone"></div>
+
+        </div>
+        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through toolbar-through" id="pages-contents">
+
+            <div class="home-pannel-left cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+                <div class="left-total">
+                    <div class="home-left-part1">
+                        <div class="float_l part1-font1">
+                            <img src="images/my-Shops.png">
+                        </div>
+                        <div class="float_l part1-font2">我的商铺</div>
+                    </div>
+                    <div class="left-shop-names">
+                        <div class="shop-name-font1">四川人家火锅</div>
+                        <!--当选中-->
+                        <div class="shop-name-font1 shop-name-active">重庆鸡公煲</div>
+                        <div class="shop-name-font1">会平行</div>
+                        <div class="shop-name-font1">黄焖鸡米饭</div>
+                        <div class="shop-name-font1">菜饭骨头汤</div>
+                    </div>
+                    <div class="left-shop-footer">
+                        <span class="btn left-shop-names-button"><img src="images/leftCross.png"> 添加商铺</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="back-ttps displaynone" id="back-ttps"></div>
+
+            <!-- Page, data-page contains page name-->
+            <div class="m-slider">
+                <ul class="cnt" id="slider">
+                    <li style="background-color: #002a80;">
+                    </li>
+                    <li style="background-color: #000000;">
+                    </li>
+                    <li style="background-color: #fff5ba;">
+                    </li>
+                    <li style="background-color: #fafafa;">
+                    </li>
+                    <li style="background-color: #2e6da4;">
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="toolbar tabbar tabbar-labels">
+            <div class="toolbar-inner">
+                <a href="myshop.html" class="tab-link">
+                    <i class="icon money-icon"><span class="badge bg-red">1</span></i>
+                    <span class="tabbar-label">融资</span>
+                </a>
+                <a href="myaccount.html" class="tab-link">
+                    <i class="icon account-icon">
+                    </i>
+                    <span class="tabbar-label">账户</span>
+                </a>
+                <a href="more_new.html" class="tab-link active">
+                    <i class="icon more-icon"></i>
+                    <span class="tabbar-label">更多</span>
+                </a>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+<!-- Path to Framework7 Library JS-->
+<script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+<!-- Path to your app js-->
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="js/wechat.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/modernizr.custom.js"></script>
+<script type="text/javascript">
+    $('.home-page-button-content button').click(function(){
+        $(this).addClass('home-button-border').siblings().removeClass('home-button-border');
+            });
+</script>
+
+<script type="text/javascript">
+    var screenWidth = $(window).width();
+    var clickNumber = 0;
+    var ccds;
+    var i =0;
+    var $btn = $('.home-page-button-content span');
+    var $btn2 = $('.home-page-click-steps span');
+    var menuLeft = document.getElementById( 'cbp-spmenu-s1' ), showLeft = document.getElementById( 'showLeft'), pagesidden = document.getElementById( 'pages-contents');
+    var $back = document.getElementById('back-ttps');
+    var closeImgClickNum = 0;
+    var slider = {
+//判断设备是否支持touch事件
+        touch:('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch,
+        slider:document.getElementById('slider'),
+//事件
+        events:{
+            index:0, //显示元素的索引
+            slider:this.slider, //this为slider对象
+            icons:document.getElementById('icons1'),
+            icon:this.icons.getElementsByTagName('span'),
+            handleEvent:function(event){
+                var self = this; //this指events对象
+                if(event.type == 'touchstart'){
+                    self.start(event);
+                }else if(event.type == 'touchmove'){
+                    self.move(event);
+                }else if(event.type == 'touchend'){
+                    self.end(event);
+                }
+            },
+//滑动开始
+            start:function(event){
+                var touch = event.targetTouches[0]; //touches数组对象获得屏幕上所有的touch，取第一个touch
+                startPos = {x:touch.pageX,y:touch.pageY,time:+new Date}; //取第一个touch的坐标值
+                isScrolling = 0; //这个参数判断是垂直滚动还是水平滚动
+                this.slider.addEventListener('touchmove',this,false);
+                this.slider.addEventListener('touchend',this,false);
+            },
+//移动
+            move:function(event){
+//当屏幕有多个touch或者页面被缩放过，就不执行move操作
+                if(event.targetTouches.length > 1 || event.scale && event.scale !== 1) return;
+                var touch = event.targetTouches[0];
+                endPos = {x:touch.pageX - startPos.x,y:touch.pageY - startPos.y};
+                isScrolling = Math.abs(endPos.x) < Math.abs(endPos.y) ? 1:0; //isScrolling为1时，表示纵向滑动，0为横向滑动
+                if(isScrolling === 0){
+                    event.preventDefault(); //阻止触摸事件的默认行为，即阻止滚屏
+                    this.slider.className = 'cnt';
+                    if(clickNumber != 0){
+                        this.index = clickNumber;
+                        this.slider.style.left = -this.index*screenWidth + endPos.x + 'px';
+                    }
+                    else{
+                        this.slider.style.left = -this.index*screenWidth + endPos.x + 'px';
+                    }
+                }
+            },
+//滑动释放
+            end:function(event){
+                var duration = +new Date - startPos.time; //滑动的持续时间
+                if(isScrolling === 0){ //当为水平滚动时
+                    this.icon[this.index].className = 'btn home-numbers-button';
+                    if(clickNumber == 0){
+                        if(Number(duration) > 10){
+                            if(endPos.x > 10){
+                                if(this.index == 0) classie.add( menuLeft, 'cbp-spmenu-open' ); classie.add( $back, 'displaynone' );
+                            }else if(endPos.x < -5){
+                                classie.remove( menuLeft, 'cbp-spmenu-open' );
+                            }
+                        }
+                        if(Number(duration) > 50){ //判断是左移还是右移，当偏移量大于30时执行
+                            if(endPos.x > 50){
+                                if(this.index !== 0) this.index -= 1;
+                            }else if(endPos.x < -50){
+                                classie.remove( menuLeft, 'cbp-spmenu-open' );
+                                classie.add( $back, 'displaynone' );
+                                if(this.index !== this.icon.length-1) this.index += 1;
+                            }
+                        }
+                        this.icon[this.index].className = 'btn home-numbers-button home-button-border';
+                        this.slider.className = 'cnt f-anim';
+                        this.slider.style.left = -this.index*screenWidth + 'px';
+                    }
+                    else if(clickNumber != 0){
+                        this.index = clickNumber;
+                        if(Number(duration) > 50){ //判断是左移还是右移，当偏移量大于30时执行
+                            if(endPos.x > 50){
+                                if(this.index !== 0)  this.index -= 1;
+                            }else if(endPos.x < -50){
+                                if(this.index !== this.icon.length-1) this.index += 1;
+                            }
+                        }
+                        this.icon[this.index].className = 'btn home-numbers-button home-button-border';
+                        this.icon[clickNumber].className = 'btn home-numbers-button';
+                        this.slider.className = 'cnt f-anim';
+                        this.slider.style.left = -this.index*screenWidth + 'px';
+                        clickNumber = 0;
+                    }
+                    this.icon[this.index].className = 'btn home-numbers-button home-button-border';
+                    this.slider.className = 'cnt f-anim';
+                    this.slider.style.left = -this.index*screenWidth + 'px';
+                }
+//解绑事件
+                this.slider.removeEventListener('touchmove',this,false);
+                this.slider.removeEventListener('touchend',this,false);
+                if(this.index >= 3){
+                    var scrollDis = this.index * 50;
+                    $('.home-page-numbers').scrollLeft(scrollDis);
+                }
+                else{
+                    $('.home-page-numbers').scrollLeft(0);
+                }
+            }
+        },
+//初始化
+        init:function(){
+            var self = this; //this指slider对象
+            if(!!self.touch) self.slider.addEventListener('touchstart',self.events,false); //addEventListener第二个参数可以传一个对象，会调用该对象的handleEvent属性
+        }
+    };
+    slider.init();
+
+    $btn.each(function(index) {
+        $(this).click(function(){
+            document.getElementById('slider').style.left = -screenWidth*index + 'px';
+            if(index > 2){
+                var scrollDis = index * 50;
+                $('.home-page-numbers').scrollLeft(scrollDis);
+            }
+            $(this).addClass('home-button-border').siblings().removeClass('home-button-border');
+            $btn2.eq(index).addClass('button-font1-act').siblings().removeClass('button-font1-act');
+            clickNumber = index;
+        })
+    });
+
+    $btn2.each(function(index){
+        $(this).click(function(){
+            document.getElementById('slider').style.left = -screenWidth*index + 'px';
+            if(index > 2){
+                var scrollDis = index * 50;
+                $('.home-page-numbers').scrollLeft(scrollDis);
+            }
+            $(this).addClass('button-font1-act').siblings().removeClass('button-font1-act');
+            $btn.eq(index).addClass('home-button-border').siblings().removeClass('home-button-border');
+            clickNumber = index;
+        });
+    });
+
+    $('#closeStep').click(function(){
+        closeImgClickNum ++;
+        $('.home-page-click-steps').slideToggle();
+        $('.home-back-black').toggle();
+        $('#icons span').toggle();
+        $('.home-font2').toggle();
+        if(closeImgClickNum%2 != 0){
+            $('#closeStep img').removeClass('rotate45').addClass('home-page-scroll');
+        }
+        else{
+            $('#closeStep img').removeClass('home-page-scroll').addClass('rotate45');
+        };
+    });
+
+    $('.home-back-black').click(function(){
+        $('.home-page-click-steps').slideToggle();
+        $('.home-back-black').toggle();
+        $('#icons span').toggle();
+        $('.home-font2').toggle();
+        $('#closeStep img').removeClass('home-page-scroll').addClass('rotate45');
+    });
+
+
+    showLeft.onclick = function() {
+        classie.toggle( showLeft, 'active' );
+        classie.toggle( menuLeft, 'cbp-spmenu-open' );
+        classie.remove( $back, 'displaynone' );
+    };
+    $back.onclick = function() {
+        classie.toggle( showLeft, 'active' );
+        classie.remove( menuLeft, 'cbp-spmenu-open' );
+        classie.add( $back, 'displaynone' );
+    };
+
+
+</script>
+
+
+</body>
+</html>

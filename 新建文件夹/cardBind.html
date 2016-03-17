@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>卡得万利商业保理</title>
+    <!-- bootstrap-->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <!--framework7 css-->
+    <link rel="stylesheet" href="lib/framework7/css/framework7.css">
+    <!--main css-->
+    <link rel="stylesheet" href="css/wechat.css">
+</head>
+<body>
+<!-- Status bar overlay for fullscreen mode-->
+<div class="statusbar-overlay"></div>
+<!-- Views-->
+<div class="views">
+    <!-- Your main view, should have "view-main" class-->
+    <div class="view view-main">
+        <!-- Top Navbar-->
+        <div class="navbar login-title">
+            <div class="navbar-inner">
+                <div class="left"><a href="#" class="close-img"><img src="images/icon/left-arror.png"> </a></div>
+                <div class="center sliding login-title-word">银行卡绑定</div>
+            </div>
+        </div>
+        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through toolbar-through">
+            <!-- Page, data-page contains page name-->
+            <div data-page="login" class="page">
+
+                <!-- Scrollable page content-->
+                <div class="page-content">
+
+                    <div class="bind-button">
+                        <div class="float_l bind-button-font1 button-active">
+                            <button>对私账户</button>
+                        </div>
+                        <div class="float_l bind-button-font2">
+                            <button>对公账户</button>
+                        </div>
+                    </div>
+
+                    <div class="bind-part1">
+
+                        <div class="content-block login-new">
+                            <div class="list-block register-home">
+                                <ul>
+                                    <li class="item-content border-bottom border-tops">
+                                        <div class="item-media">
+                                            <span class="icon username_icon"><img src="images/icon/user.png"></span>
+                                        </div>
+                                        <div class="item-inners">
+                                            <div class="item-title">
+                                                <input class="login_input" type="text" placeholder="银行账号">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="item-content border-bottom">
+                                        <div class="item-media">
+                                            <span class="icon username_icon pinCode2"><img src="images/icon/phoneCode.png"></span>
+                                        </div>
+                                        <div class="item-inners">
+                                            <div class="item-title login_input2">
+                                                <input class="login_input" type="text" placeholder="银行预留手机号">
+                                                <button class="get_verti-new button button-round" type="button" id="getCheckCode1">获取验证码</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="item-content border-bottom">
+                                        <div class="item-media">
+                                            <span class="icon username_icon"><img src="images/icon/pinCode.png"></span>
+                                        </div>
+                                        <div class="item-inners">
+                                            <div class="item-title">
+                                                <input class="login_input" type="text" placeholder="输入验证码">
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="padding-rl15 margin-t-5">
+                            <div class="bind-font1">
+                                <span class="bind-font2">注：</span>放款账户和还款账户必须一致
+                            </div>
+
+                            <div class="bind-number-new2">
+                                <a class="button button-big button-fill apply-button" href="#">绑定</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="bind-part2 displaynone">
+
+                        <div class="content-block login-new">
+                            <div class="list-block register-home">
+                                <ul>
+                                    <li class="item-content border-bottom border-tops">
+                                        <div class="item-media">
+                                            <span class="icon username_icon"><img src="images/icon/user.png"></span>
+                                        </div>
+                                        <div class="item-inners">
+                                            <div class="item-title">
+                                                <input class="login_input" type="text" placeholder="银行账号">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="item-content border-bottom">
+                                        <div class="item-media">
+                                            <span class="icon username_icon pinCode2"><img src="images/icon/phoneCode.png"></span>
+                                        </div>
+                                        <div class="item-inners">
+                                            <div class="item-title login_input2">
+                                                <input class="login_input" type="text" placeholder="银行预留手机号">
+                                                <button class="get_verti-new button button-round" type="button" id="getCheckCode2">获取验证码</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="item-content border-bottom">
+                                        <div class="item-media">
+                                            <span class="icon username_icon"><img src="images/icon/pinCode.png"></span>
+                                        </div>
+                                        <div class="item-inners">
+                                            <div class="item-title">
+                                                <input class="login_input" type="text" placeholder="输入验证码">
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <ul class="register-home-part2">
+                                    <li class="item-content border-bottom border-tops">
+                                        <div class="item-media">
+                                            <span class="icon username_icon pinCode3"><img src="images/icon/cards.png"></span>
+                                        </div>
+                                        <div class="item-inners">
+                                            <div class="item-title">
+                                                <input class="login_input" type="text" placeholder="开户银行">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="item-content border-bottom">
+                                        <div class="item-media">
+                                            <span class="icon username_icon"><img src="images/icon/user.png"></span>
+                                        </div>
+                                        <div class="item-inners">
+                                            <div class="item-title">
+                                                <input class="login_input" type="text" placeholder="银行账号">
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="padding-rl15 margin-t-5">
+                            <div class="bind-font1">
+                                <span class="bind-font2">注：</span>放款账户和还款账户必须一致
+                            </div>
+                            <div class="bind-number-new2">
+                                <a class="button button-big button-fill apply-button" href="#">绑定</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Path to Framework7 Library JS-->
+<script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+<!-- Path to your app js-->
+<script type="text/javascript" src="js/wechat.js"></script>
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+
+<script type="text/javascript">
+
+    $('.bind-button-font1').click(function(){
+        $('.bind-part2').addClass('displaynone');
+        $('.bind-part1').removeClass('displaynone');
+        $('.bind-button-font1').addClass('button-active');
+        $('.bind-button-font2').removeClass('button-active');
+    });
+    $('.bind-button-font2').click(function(){
+        $('.bind-part1').addClass('displaynone');
+        $('.bind-part2').removeClass('displaynone');
+        $('.bind-button-font2').addClass('button-active');
+        $('.bind-button-font1').removeClass('button-active');
+    });
+</script>
+</body>
+</html>
